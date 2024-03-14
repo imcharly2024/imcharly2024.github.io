@@ -1,0 +1,8 @@
+.propaganda-img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto; /* Ajusta la altura según el contenido */
+}
+
+/* Ajustes adicionales según sea necesario */

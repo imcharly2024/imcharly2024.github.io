@@ -1,0 +1,12 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0rem;
+}
+
+h2 {
+  background-color: #020216; 
+  text-align: center; 
+  color: white; 
+  width: 90%;
+}
