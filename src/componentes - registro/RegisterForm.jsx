@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import './RegisterForm.css';
 import video from '../assets/img/iph.mp4'; 
@@ -24,6 +23,7 @@ function RegisterForm() {
         fechaNacimiento: '',
         password: ''
     });
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -70,8 +70,11 @@ function RegisterForm() {
         }
 
         if (Object.keys(formErrors).length === 0) {
+            setIsSubmitted(true);
+            setErrors({});
             console.log('Form submitted:', formData);
         } else {
+            setIsSubmitted(false);
             setErrors(formErrors);
         }
     };
@@ -80,14 +83,10 @@ function RegisterForm() {
         <div className="register-container">
             <h2>Registro</h2>
             <video autoPlay loop className="video-background">
-    
-    <source src={video} type="video/mp4" />
-    Tu navegador no soporta el elemento de video.
-</video>
-
-<div className="content">
-    {/* Aquí puedes agregar el contenido que se superpondrá al video */}
-</div>
+                <source src={video} type="video/mp4" />
+                Tu navegador no soporta el elemento de video.
+            </video>
+            
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Nombre</label>
@@ -170,7 +169,11 @@ function RegisterForm() {
                     {errors.password && <p className="error-message">{errors.password}</p>}
                 </div>
                 <button type="submit">Registrarme</button>
+                <div className="content">
+                {isSubmitted && <p className="success-message">Felicidades Tu Registro fue exitoso!</p>}
+            </div>
             </form>
+            
         </div>
     );
 }

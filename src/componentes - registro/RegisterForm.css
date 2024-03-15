@@ -48,3 +48,13 @@ button:hover {
     font-size: 14px;
     margin-top: 5px;
 }
+
+.success-message {
+    background-color: #28a745; /* Fondo verde */
+    color: #ffffff; /* Texto blanco */
+    font-weight: bold; /* Texto en negrita */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
